@@ -11,4 +11,4 @@ Analizar datos del Mundial FIFA 2022 para generar hallazgos descriptivos y visua
 ## Pendientes iniciales
 - Validar calidad del dataset original.
 - Definir diccionario de variables.
-- Construir visualizaciones exploratorias clave.
+- 
