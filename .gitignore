@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+
+# Outputs generados
+results/**/*.png
+results/**/*.jpg
+results/**/*.jpeg
+results/**/*.svg
+results/**/*.pdf
+
+# Local data variants (optional)
+# data/raw/
+# data/processed/
