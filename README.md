@@ -7,8 +7,8 @@ Repositorio para el analisis del Mundial FIFA 2022 con enfoque en organizacion, 
 ```text
 proyecto-fifa-mcdi500/
 ├── data/
-│   ├── raw/                  # datasetx desde Kaggle
-│   └── processed/            # datos transformados y preparados
+│   ├── raw/                 
+│   └── processed/            
 ├── notebooks/
 │   ├── 01_eda.ipynb
 │   ├── 02_limpieza.ipynb
