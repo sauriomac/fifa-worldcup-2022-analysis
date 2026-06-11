@@ -116,7 +116,6 @@ fifa-worldcup-2022-analysis/
 ├── .gitignore
 ├── .mailmap
 └── README.md
-```
 
 ---
 
