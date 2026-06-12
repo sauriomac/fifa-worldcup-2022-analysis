@@ -1,129 +1,128 @@
-# proyecto-fifa-mcdi500
+# Proyecto FIFA World Cup 2022 - MCDI500
 
-Repositorio para el análisis del Mundial FIFA Qatar 2022 con enfoque en organización, trazabilidad, reproducibilidad y trabajo colaborativo utilizando herramientas de Ciencia de Datos.
+Repositorio del proyecto académico desarrollado para la asignatura **MCDI500 – Herramientas de Software Científico**, orientado al análisis del conjunto de datos del Mundial FIFA Qatar 2022 mediante un flujo de trabajo reproducible y colaborativo.
+
+---
 
 ## Descripción del Proyecto
 
-Este proyecto tiene como propósito analizar los datos del Mundial FIFA Qatar 2022 mediante técnicas de exploración, limpieza, transformación y visualización de datos.
+El proyecto busca analizar las estadísticas del Mundial FIFA Qatar 2022 para identificar variables y patrones asociados al desempeño de las selecciones participantes.
 
-El análisis busca identificar patrones relevantes relacionados con el rendimiento de las selecciones participantes, resultados de los encuentros, distribución de goles y comportamiento general del torneo.
+Se utilizan herramientas del ecosistema científico de Python y buenas prácticas de desarrollo colaborativo, asegurando trazabilidad, documentación y reproducibilidad.
+
+---
+
+## Pregunta de Investigación
+
+**¿Qué estadísticas influyen en el desempeño y los resultados obtenidos por las selecciones participantes en la Copa Mundial FIFA Qatar 2022?**
+
+---
 
 ## Objetivo General
 
-Analizar los datos del Mundial FIFA 2022 para obtener información descriptiva y generar visualizaciones que permitan comprender el desempeño de los equipos durante la competencia.
+Analizar los datos del Mundial FIFA Qatar 2022 mediante técnicas de exploración, limpieza y transformación de datos, generando una base reproducible para posteriores análisis y visualizaciones.
+
+---
 
 ## Objetivos Específicos
 
-* Explorar la estructura y calidad de los datos.
-* Identificar y corregir valores faltantes o inconsistencias.
-* Realizar análisis exploratorio de datos (EDA).
-* Generar estadísticas descriptivas relevantes.
-* Construir visualizaciones para apoyar la interpretación de resultados.
-* Documentar el proceso para asegurar la reproducibilidad del proyecto.
+* Obtener y validar el conjunto de datos.
+* Explorar la estructura y calidad de las variables.
+* Identificar y tratar valores faltantes e inconsistencias.
+* Transformar los datos para facilitar su análisis.
+* Documentar las decisiones técnicas realizadas.
+* Mantener un entorno reproducible y colaborativo mediante Git y GitHub.
+
+---
 
 ## Dataset Utilizado
 
-Fuente de datos: FIFA World Cup 2022 Dataset.
+**Fuente:**
 
-Información considerada para el análisis:
+* FIFA World Cup 2022 Complete Dataset
+* Autor: Diego Orige
+* Plataforma: Kaggle
 
-* Equipos participantes.
-* Resultados de los partidos.
-* Goles anotados.
-* Fechas de los encuentros.
-* Fases del torneo.
-* Estadísticas generales de desempeño.
+https://www.kaggle.com/datasets/die9origephit/fifa-world-cup-2022-complete-dataset
 
-## Metodología de Trabajo
+---
 
-El proyecto sigue las siguientes etapas:
+## Metodología
 
-### 1. Comprensión del problema
+El proyecto sigue una adaptación de la metodología **CRISP-DM**:
 
-Definición de objetivos y preguntas de análisis.
+1. Comprensión del problema.
+2. Obtención de los datos.
+3. Exploración y comprensión del dataset.
+4. Limpieza y transformación de datos.
+5. Análisis y visualización.
+6. Interpretación de resultados.
 
-### 2. Exploración de Datos (EDA)
+---
 
-* Revisión de variables.
-* Tipos de datos.
-* Estadísticas descriptivas.
-* Identificación de anomalías.
-
-### 3. Limpieza de Datos
-
-* Tratamiento de valores nulos.
-* Corrección de inconsistencias.
-* Homologación de formatos.
-
-### 4. Transformación de Datos
-
-* Preparación de variables.
-* Generación de atributos derivados cuando corresponda.
-
-### 5. Visualización
-
-* Distribución de goles.
-* Comparación de selecciones.
-* Resultados por fase del torneo.
-* Análisis descriptivo general.
-
-### 6. Interpretación de Resultados
-
-Obtención de conclusiones y hallazgos relevantes.
-
-## Estructura del Proyecto
+## Estructura del Repositorio
 
 ```text
 proyecto-fifa-mcdi500/
+│
 ├── data/
 │   ├── raw/
 │   └── processed/
+│
 ├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_limpieza.ipynb
-│   └── 03_analisis.ipynb
+│   ├── F1_Definicion.ipynb
+│   └── F2_Definicion.ipynb
+│
 ├── docs/
-│   ├── referencias.md
-│   └── notas_proyecto.md
+│
 ├── results/
-│   ├── figures/
-│   └── reports/
+│
 ├── src/
-│   └── funciones_reutilizables.py
+│
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
-## Primeros Commits Proyectados
+---
 
-* docs: agrega README inicial del proyecto
-* data: incorpora dataset FIFA World Cup 2022
-* feat: crea notebook de análisis exploratorio
-* docs: agrega documentación inicial del proyecto
-* feat: incorpora visualizaciones preliminares
-* fix: corrige nombres y formatos de variables
-* refactor: reorganiza estructura del repositorio
+## Estrategia de Trabajo Colaborativo
 
-## Estrategia de Ramas
+Se utiliza GitHub con una rama principal (**main**) y ramas por funcionalidad para cada integrante.
 
-La rama principal es **main** y cada integrante trabaja en ramas por funcionalidad:
+### Ramas
 
-* feature-data
-* feature-analysis
-* feature-documentation
-* feature-visualization
+* `feature/f2-obtencion-exploracion`
+* `feature/f2-limpieza-transformacion`
+* `feature/f2-documentacion-validacion`
 
-La integración se realiza mediante Pull Requests revisados por el equipo antes de realizar merge a la rama principal.
+La integración se realiza mediante Pull Requests revisados por el equipo antes del merge a `main`.
+
+---
 
 ## Convención de Commits
 
-Se utiliza Conventional Commits para mantener un historial claro y consistente:
+Se emplea la especificación **Conventional Commits**:
 
-* feat: nueva funcionalidad
-* docs: cambios de documentación
-* fix: correcciones de errores
-* refactor: mejoras internas sin cambiar funcionalidad
-* chore: tareas de mantenimiento
+* `feat`: nuevas funcionalidades.
+* `docs`: documentación.
+* `fix`: correcciones.
+* `refactor`: mejoras internas.
+* `chore`: mantenimiento.
+
+Ejemplos:
+
+```text
+feat(f2): agrega carga inicial del dataset
+
+feat(f2): incorpora exploración del dataframe
+
+feat(f2): implementa limpieza y transformación de datos
+
+docs(f2): documenta decisiones técnicas
+```
+
+---
 
 ## Herramientas Utilizadas
 
@@ -136,20 +135,46 @@ Se utiliza Conventional Commits para mantener un historial claro y consistente:
 * Git
 * GitHub
 
-## Entorno de Trabajo
+---
+
+## Reproducibilidad
 
 1. Clonar el repositorio.
-2. Crear y activar un entorno virtual.
-3. Instalar dependencias desde requirements.txt.
-4. Ejecutar los notebooks ubicados en la carpeta notebooks/.
-5. Generar resultados y visualizaciones en la carpeta results/.
+
+```bash
+git clone https://github.com/sauriomac/fifa-worldcup-2022-analysis.git
+```
+
+2. Crear entorno virtual.
+
+```bash
+python -m venv .venv
+```
+
+3. Activar el entorno.
+
+```bash
+source .venv/bin/activate
+```
+
+4. Instalar dependencias.
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Ejecutar los notebooks ubicados en la carpeta `notebooks`.
+
+---
 
 ## Integrantes
 
-* Rodrigo Espinoza
+* Luis Rodrigo Espinoza
 * Claudio Alarcón
 * Enzo Pinilla
 
+---
+
 ## Estado del Proyecto
 
-Proyecto académico en desarrollo para la asignatura de Ciencia de Datos.
+Proyecto académico en desarrollo correspondiente al Magíster en Ciencia de Datos e Inteligencia Artificial.
