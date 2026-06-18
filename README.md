@@ -78,9 +78,11 @@ El proyecto sigue una adaptación de la metodología **CRISP-DM**:
 
 ### Fase 3
 
+* Reutilización del pipeline desarrollado en Fase 2.
 * Implementación de algoritmos estructurados y recursivos.
-* Comparación entre enfoques iterativos y vectorizados.
-* Medición de complejidad temporal mediante `timeit`.
+* Comparación entre enfoques iterativos, recursivos y vectorizados.
+* Medición de complejidad temporal y espacial.
+* Incorporación de Programación Orientada a Objetos.
 * Modularización del código y documentación técnica.
 
 ---
@@ -99,8 +101,7 @@ fifa-worldcup-2022-analysis/
 ├── notebooks/
 │   ├── F1_Definicion.ipynb
 │   ├── F2_Definicion.ipynb
-│   ├── F3_Definicion.ipynb
-│   └── otros.ipynb
+│   └── F3_Definicion.ipynb
 │
 ├── results/
 │   ├── figures/
@@ -116,6 +117,7 @@ fifa-worldcup-2022-analysis/
 ├── .gitignore
 ├── .mailmap
 └── README.md
+```
 
 ---
 
@@ -130,6 +132,36 @@ Durante la Fase 3 se desarrollaron distintas estrategias para analizar estadíst
 * Operaciones vectorizadas con Pandas.
 
 Las mediciones de complejidad temporal fueron realizadas utilizando la biblioteca estándar `timeit`.
+
+---
+
+## Programación Orientada a Objetos
+
+Durante la Fase 3 se incorporaron principios de Programación Orientada a Objetos para mejorar la organización y extensibilidad del sistema.
+
+Se implementaron los siguientes conceptos:
+
+* Encapsulamiento mediante la clase `Preprocesador`.
+* Herencia a través de clases derivadas de `Transformador`.
+* Polimorfismo mediante el método `aplicar()`.
+* Composición mediante la clase `Pipeline`.
+
+Esta estructura permite extender el sistema incorporando nuevas transformaciones sin modificar la arquitectura principal.
+
+---
+
+## Complejidad Computacional
+
+Las implementaciones desarrolladas fueron comparadas mediante mediciones reproducibles utilizando `timeit`.
+
+| Implementación       | Complejidad temporal | Complejidad espacial |
+| -------------------- | -------------------- | -------------------- |
+| suma_iterativa       | O(n)                 | O(1)                 |
+| suma_recursiva       | O(n)                 | O(n)                 |
+| merge_sort_recursivo | O(n log n)           | O(n)                 |
+| sorted()             | O(n log n)           | O(n)                 |
+
+La comparación permitió justificar el uso de operaciones vectorizadas y funciones optimizadas para mejorar el rendimiento práctico.
 
 ---
 
@@ -150,6 +182,24 @@ La solución se encuentra organizada mediante módulos independientes.
 
 ---
 
+## Pipeline reutilizado desde Fase 2
+
+El notebook `F3_Definicion.ipynb` reutiliza explícitamente el pipeline de preprocesamiento desarrollado en la Fase 2.
+
+Las principales etapas ejecutadas son:
+
+1. Carga del dataset.
+2. Normalización de nombres de columnas.
+3. Conversión de porcentajes.
+4. Transformación de variables.
+5. Codificación One-Hot.
+6. Escalamiento mediante StandardScaler.
+7. Validación del dataset procesado.
+
+Esto permite mantener la trazabilidad y reproducibilidad del flujo completo del proyecto.
+
+---
+
 ## Estrategia de Trabajo Colaborativo
 
 El desarrollo se realiza utilizando GitHub y ramas por funcionalidad.
@@ -164,6 +214,9 @@ El desarrollo se realiza utilizando GitHub y ramas por funcionalidad.
 * `feature-f3-algorithms`
 * `feature-f3-docs`
 * `feature-f3-newnotebook`
+* `feature/integrar_pipeline`
+* `feature/integrar_nucleo`
+* `feature/incorporar_poo` 
 
 La integración se realiza mediante Pull Requests y revisión colaborativa.
 
@@ -171,24 +224,20 @@ La integración se realiza mediante Pull Requests y revisión colaborativa.
 
 ## Convención de Commits
 
-Se emplea la especificación **Conventional Commits**:
-
-* `feat`: nuevas funcionalidades.
-* `docs`: documentación.
-* `fix`: correcciones.
-* `refactor`: mejoras internas.
-* `chore`: mantenimiento.
+Se emplea la especificación **Conventional Commits**.
 
 Ejemplos:
 
 ```text
-feat(f3): implementa estructuras y algoritmos recursivos
+feat(f3): integrar pipeline completo reutilizado desde F2
 
-feat(f3): agrega nueva sección notebook F3_Definicion
+feat(f3): implementar nucleo algoritmico y mediciones de complejidad
 
-docs(f3): actualiza documentación técnica
+feat(f3): incorporar POO y documentacion final de arquitectura
 
-fix: corrige estructura del repositorio
+docs(f3): actualizar documentacion tecnica
+
+fix: corregir estructura del repositorio
 ```
 
 ---
@@ -198,8 +247,10 @@ fix: corrige estructura del repositorio
 * Python
 * Pandas
 * NumPy
+* Scikit-learn
 * Matplotlib
 * Jupyter Notebook
+* timeit
 * Git
 * GitHub
 
@@ -265,6 +316,16 @@ para verificar la reproducibilidad completa del proyecto.
 
 ---
 
+## Referencias
+
+* Downey, A. B. (2015). *Think Python: How to Think Like a Computer Scientist* (2nd ed.). Green Tea Press.
+* McKinney, W. (2022). *Python for Data Analysis* (3rd ed.). O'Reilly Media.
+* NumPy Developers. (2024). *NumPy documentation*.
+* Pedregosa, F., et al. (2011). *Scikit-learn: Machine Learning in Python*. Journal of Machine Learning Research, 12, 2825-2830.
+* The pandas development team. (2024). *pandas documentation*.
+
+---
+
 ## Estado del Proyecto
 
-Proyecto académico correspondiente al **Magíster en Ciencia de Datos e Inteligencia Artificial**, actualmente en desarrollo dentro de la asignatura **MCDI500 – Herramientas de Software Científico**.
+Proyecto académico correspondiente al **Magíster en Ciencia de Datos e Inteligencia Artificial**, desarrollado en la asignatura **MCDI500 – Herramientas de Software Científico**, con énfasis en reproducibilidad, análisis algorítmico y trabajo colaborativo.
