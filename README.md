@@ -279,9 +279,11 @@ feat(f4): incorporar algoritmos eficiencia y POO
 
 feat(f4): agregar visualizaciones cierre y changelog 
 
-docs(f4): actualizar documentación técnica final
+docs(F4): documentar fase F4 y trazabilidad del proyecto
 
-fix: corregir estructura del repositorio
+docs(f4): actualizar README y bibliografia del notebook final
+
+test: validar notebook con restart and run all
 ```
 
 ---
@@ -350,9 +352,6 @@ Se recomienda ejecutar cada notebook mediante:
 **Kernel → Restart & Run All**
 
 para verificar la reproducibilidad completa del proyecto y asegurar la coherencia entre el repositorio, los notebooks y el informe final.
-
-```
-```
 
 ---
 
