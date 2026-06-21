@@ -85,6 +85,21 @@ El proyecto sigue una adaptación de la metodología **CRISP-DM**:
 * Incorporación de Programación Orientada a Objetos.
 * Modularización del código y documentación técnica.
 
+## Fase 4
+
+La Fase 4 corresponde a la integración final del proyecto y consolida los avances desarrollados en las fases anteriores.
+
+En esta etapa se incorporaron:
+
+* Integración de las fases F1, F2 y F3 en el notebook `F4_Definicion.ipynb`.
+* Construcción de visualizaciones analíticas para comunicar los resultados obtenidos.
+* Interpretación de resultados, discusión y conclusiones.
+* Registro de mejoras y evolución técnica mediante el archivo `CHANGELOG.md`.
+* Consolidación del proyecto final reproducible.
+
+Adicionalmente, la evolución técnica del proyecto fue registrada mediante el archivo `CHANGELOG.md`, el cual documenta las mejoras incorporadas, los cambios realizados y la progresión entre las fases F1, F2, F3 y F4. Este registro contribuye a mantener la trazabilidad y la coherencia entre el repositorio, los notebooks y el informe final.
+
+
 ---
 
 ## Estructura del Repositorio
@@ -101,22 +116,23 @@ fifa-worldcup-2022-analysis/
 ├── notebooks/
 │   ├── F1_Definicion.ipynb
 │   ├── F2_Definicion.ipynb
-│   └── F3_Definicion.ipynb
+│   ├── F3_Definicion.ipynb
+│   └── F4_Definicion.ipynb
 │
 ├── results/
 │   ├── figures/
-│   │   └── .gitkeep
 │   └── reports/
-│       └── .gitkeep
 │
 ├── src/
 │   ├── funciones_reutilizables.py
 │   └── funciones_f3_algoritmos.py
 │
+├── CHANGELOG.md
+├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── .mailmap
-└── README.md
+└── .mailmap
+
 ```
 
 ---
@@ -167,18 +183,28 @@ La comparación permitió justificar el uso de operaciones vectorizadas y funcio
 
 ## Arquitectura del Código
 
-La solución se encuentra organizada mediante módulos independientes.
+La solución se encuentra organizada mediante módulos y notebooks independientes, permitiendo mantener una alta cohesión y una clara separación de responsabilidades.
 
-| Componente                 | Responsabilidad                       |
-| -------------------------- | ------------------------------------- |
-| F2_Definicion.ipynb        | Pipeline de datos                     |
-| F3_Definicion.ipynb        | Análisis algorítmico                  |
-| funciones_reutilizables.py | Funciones reutilizables               |
-| funciones_f3_algoritmos.py | Algoritmos estructurados y recursivos |
-| data/raw                   | Datos originales                      |
-| data/processed             | Datos procesados                      |
-| results/figures            | Figuras                               |
-| results/reports            | Reportes                              |
+| Componente                 | Responsabilidad                                                          |
+| -------------------------- | ------------------------------------------------------------------------ |
+| F1_Definicion.ipynb        | Definición del problema y configuración inicial                          |
+| F2_Definicion.ipynb        | Pipeline de preprocesamiento y transformación de datos                   |
+| F3_Definicion.ipynb        | Implementación del núcleo algorítmico y programación orientada a objetos |
+| F4_Definicion.ipynb        | Integración final, visualizaciones, resultados y conclusiones            |
+| funciones_reutilizables.py | Funciones reutilizables para carga, transformación y validación          |
+| funciones_f3_algoritmos.py | Algoritmos estructurados, recursivos y mediciones de eficiencia          |
+| data/raw                   | Almacenamiento de datos originales                                       |
+| data/processed             | Almacenamiento de datos procesados                                       |
+| results/figures            | Figuras y visualizaciones generadas                                      |
+| results/reports            | Reportes y documentos asociados                                          |
+| README.md                  | Documentación técnica y guía de ejecución                                |
+| CHANGELOG.md               | Registro de cambios y evolución del proyecto                             |
+| requirements.txt           | Dependencias necesarias para reproducir el entorno                       |
+
+
+
+La organización modular permite que los notebooks actúen como orquestadores del flujo de trabajo, mientras que la lógica reutilizable se concentra en los módulos ubicados en `src/`. Esta estructura facilita la mantenibilidad, la extensibilidad y la reproducibilidad del proyecto.
+
 
 ---
 
@@ -202,7 +228,7 @@ Esto permite mantener la trazabilidad y reproducibilidad del flujo completo del 
 
 ## Estrategia de Trabajo Colaborativo
 
-El desarrollo se realiza utilizando GitHub y ramas por funcionalidad.
+El desarrollo se realizó utilizando GitHub y ramas por funcionalidad.
 
 ### Ramas utilizadas
 
@@ -214,11 +240,19 @@ El desarrollo se realiza utilizando GitHub y ramas por funcionalidad.
 * `feature-f3-algorithms`
 * `feature-f3-docs`
 * `feature-f3-newnotebook`
-* `feature/integrar_pipeline`
-* `feature/integrar_nucleo`
-* `feature/incorporar_poo` 
+* `feature/f4-contexto-reproducibilidad`
+* `feature/f4-algoritmos-poo`
+* `feature/f4-visualizacion-cierre`
 
-La integración se realiza mediante Pull Requests y revisión colaborativa.
+Las contribuciones más recientes del proyecto corresponden a la integración de la Fase 4 mediante tres ramas principales:
+
+* `feature/f4-contexto-reproducibilidad`, orientada a la integración del contexto y la reproducibilidad del proyecto.
+* `feature/f4-algoritmos-poo`, destinada a la incorporación del análisis algorítmico y la programación orientada a objetos.
+* `feature/f4-visualizacion-cierre`, enfocada en las visualizaciones, resultados, conclusiones y documentación final.
+
+La integración se realizó mediante Pull Requests y merges hacia la rama principal, manteniendo una trazabilidad clara del trabajo colaborativo y de la evolución técnica del proyecto.
+
+
 
 ---
 
@@ -236,6 +270,16 @@ feat(f3): implementar nucleo algoritmico y mediciones de complejidad
 feat(f3): incorporar POO y documentacion final de arquitectura
 
 docs(f3): actualizar documentacion tecnica
+
+fix: corregir estructura del repositorio
+
+feat(f4): integrar contexto y reproducibilidad del proyecto 
+
+feat(f4): incorporar algoritmos eficiencia y POO 
+
+feat(f4): agregar visualizaciones cierre y changelog 
+
+docs(f4): actualizar documentación técnica final
 
 fix: corregir estructura del repositorio
 ```
@@ -292,19 +336,23 @@ pip install -r requirements.txt
 
 ### 5. Ejecutar los notebooks
 
-Los notebooks principales se encuentran en:
+Los notebooks principales del proyecto son:
 
 ```text
 notebooks/F1_Definicion.ipynb
 notebooks/F2_Definicion.ipynb
 notebooks/F3_Definicion.ipynb
+notebooks/F4_Definicion.ipynb
 ```
 
-Se recomienda ejecutar:
+Se recomienda ejecutar cada notebook mediante:
 
 **Kernel → Restart & Run All**
 
-para verificar la reproducibilidad completa del proyecto.
+para verificar la reproducibilidad completa del proyecto y asegurar la coherencia entre el repositorio, los notebooks y el informe final.
+
+```
+```
 
 ---
 
